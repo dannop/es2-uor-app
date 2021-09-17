@@ -27,7 +27,7 @@ export default function SignInPage(props: any){
     // const resp = await AuthApi.session.login(JSON.stringify(body));
     if (resp != null) {
       StorageService.login(resp.token, resp.token);
-      props.history.push({pathname: '/home'});
+      props.history.push({pathname: '/'});
       return;
     };
     loaderContext?.setLoading(false);

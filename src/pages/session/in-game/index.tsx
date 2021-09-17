@@ -39,45 +39,43 @@ export default function InGamePage(props: any){
   );
 
   return (
-    <div className="container">
-      <section id="select-players" className="d-flex">
-        <div className="container-fluid">
-          <div className="row players-row">
-            <div className="col-md-1">
-              <DefaultBtn 
-                label="Voltar"
-                onClick={() => props.history.push({pathname: '/'})}
-              />
-              <div className="circle-btn d-flex back"> 
-                <i className="fas fa-angle-double-left"></i> 
-              </div>
-            </div>
-            <div className="col-md-10 align-self-center">
-              <h1>SELECIONE OS JOGADORES PARA COMEÇAR A PARTIDA</h1>
-
-              <div className="row">
-                <div className="col-md-6">
-                  {playerContainer()}
-                </div>
-                <div className="col-md-6">
-                  {playerContainer()}
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-md-6">
-                  {playerContainer()}
-                </div>
-                <div className="col-md-6">
-                  {playerContainer()}
-                </div>
-              </div>
-              <a href="#">
-                <div className="rectangular-btn btn" id="btn-start">Começar</div>
-              </a>
+    <section id="select-players" className="d-flex">
+      <div className="container-fluid">
+        <div className="row players-row">
+          <div className="col-md-1">
+            <DefaultBtn 
+              label="Voltar"
+              onClick={() => props.history.push({pathname: '/'})}
+            />
+            <div className="circle-btn d-flex back"> 
+              <i className="fas fa-angle-double-left"></i> 
             </div>
           </div>
+          <div className="col-md-10 align-self-center">
+            <h1>SELECIONE OS JOGADORES PARA COMEÇAR A PARTIDA</h1>
+
+            <div className="row">
+              <div className="col-md-6">
+                {playerContainer()}
+              </div>
+              <div className="col-md-6">
+                {playerContainer()}
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-md-6">
+                {playerContainer()}
+              </div>
+              <div className="col-md-6">
+                {playerContainer()}
+              </div>
+            </div>
+            <a href="#">
+              <div className="rectangular-btn btn" id="btn-start">Começar</div>
+            </a>
+          </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }
