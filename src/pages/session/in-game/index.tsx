@@ -1,10 +1,11 @@
 import { useContext, useEffect } from "react";
 
+import './style.scss';
+
 import LoaderContext from "../../../context/loader";
 
 import DefaultBtn from '../../../components/buttons/default-btn';
-
-import './style.scss';
+import RoundBtn from "../../../components/buttons/round-btn";
 
 export default function InGamePage(props: any){
   const loaderContext = useContext(LoaderContext);
@@ -19,6 +20,11 @@ export default function InGamePage(props: any){
         <div className="row players-row">
           <div className="col-md-1">
             <DefaultBtn 
+              label="Voltar"
+              onClick={() => props.history.push({pathname: '/'})}
+            />
+            <RoundBtn 
+              icon={<i className="fas fa-angle-double-left"></i>}
               label="Voltar"
               onClick={() => props.history.push({pathname: '/'})}
             />
