@@ -1,10 +1,10 @@
-import { memo } from 'react';
+import React, { memo } from 'react';
+
+import './style.scss'
 
 function DefaultBtn({ label, onClick }: any){
   return (
-    <button onClick={onClick}>
-      <p>{label}</p>
-    </button>
+    <button className="defaultBtn" onClick={onClick}>{label}</button>
   )
 }
 
