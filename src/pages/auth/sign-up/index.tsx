@@ -5,8 +5,10 @@ import { StorageService, ApiRoutesService } from '../../../services';
 import LoaderContext from '../../../context/loader';
 
 import TextField from '../../../components/forms/text-field';
+import TransparentBtn from '../../../components/buttons/transparent-btn';
 import DefaultBtn from '../../../components/buttons/default-btn';
 
+import logoImg from '../../../assets/images/logo.png';
 
 export default function SignUpPage(props: any){
   const loaderContext = useContext(LoaderContext);
@@ -32,29 +34,38 @@ export default function SignUpPage(props: any){
   }
 
   return (
-    <div className="container">
-      <DefaultBtn 
-        label="Voltar"
-        onClick={() => props.history.push({pathname: '/sign-in'})}
-      />
-      <TextField 
-        label={'E-mail'}
-        name={'E-mail'}
-        value={email}
-        onChange={(e: any) => setEmail(e.target.value)}
-        placeholder={'Digite seu e-mail'}
-      />
-      <TextField 
-        label={'Senha'}
-        name={'Senha'}
-        value={password}
-        onChange={(e: any) => setPassword(e.target.value)}
-        placeholder={'Digite sua senha'}
-      />
-      <DefaultBtn 
-        label="Cadastre-se"
-        onClick={() => register()}
-      />
+    <div className="default-section">
+      <div className="container">
+        <div className="login-container">
+          <div className="col-md-4">
+            <div className="form-container">
+              <img src={logoImg} alt="Logo do Game" />
+              <TextField 
+                label={'E-mail'}
+                name={'E-mail'}
+                value={email}
+                onChange={(e: any) => setEmail(e.target.value)}
+                placeholder={'Digite seu e-mail'}
+              />
+              <TextField 
+                label={'Senha'}
+                name={'Senha'}
+                value={password}
+                onChange={(e: any) => setPassword(e.target.value)}
+                placeholder={'Digite sua senha'}
+              />
+              <DefaultBtn 
+                label="Cadastrar"
+                onClick={() => register()}
+              />
+              <TransparentBtn 
+                label="Login"
+                onClick={() => props.history.push({pathname: '/sign-in'})}
+              />
+            </div>
+            </div>
+        </div>
+      </div>
     </div>
   );
 }

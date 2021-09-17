@@ -5,6 +5,7 @@ import LoaderContext from '../../../context/loader';
 import DefaultBtn from '../../../components/buttons/default-btn';
 import TransparentBtn from '../../../components/buttons/transparent-btn';
 import TextField from '../../../components/forms/text-field';
+
 import { StorageService } from '../../../services';
 
 import './style.scss';
@@ -58,16 +59,14 @@ export default function SignInPage(props: any){
                 onChange={(e: any) => setPassword(e.target.value)}
                 placeholder={'Digite sua senha'}
               />
-              <div className="">
-                <DefaultBtn 
-                  label="Entrar"
-                  onClick={() => login()}
-                />
-                <TransparentBtn 
-                  label="Cadastre-se"
-                  onClick={() => props.history.push({pathname: '/sign-up'})}
-                />
-              </div>
+              <DefaultBtn 
+                label="Entrar"
+                onClick={() => login()}
+              />
+              <TransparentBtn 
+                label="Cadastre-se"
+                onClick={() => props.history.push({pathname: '/sign-up'})}
+              />
             </div>
             </div>
         </div>
