@@ -7,7 +7,7 @@ import ProfilePage from "./profile";
 
 const AuthRoutes = (
   <>
-    <PrivateRoute exact path="/" component={withRouter(HomePage)} />
+    <PrivateRoute exact path="/home" component={withRouter(HomePage)} />
     <PrivateRoute exact path="/recovery_password" component={withRouter(ProfilePage)} />
   </>
 );

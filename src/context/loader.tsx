@@ -2,9 +2,14 @@ import { createContext, useState } from "react";
 
 import Loader from "../components/loader";
 
-const LoaderContext = createContext({});
+interface ContextType {
+  loading: boolean,
+  setLoading: Function
+}
 
-export const LoaderProvider = ({ children }: any) => {
+const LoaderContext = createContext<ContextType | null>(null);
+
+export const LoaderProvider: React.FC = ({ children }: any) => {
   const [loading, setLoading] = useState(false);
   
   return (

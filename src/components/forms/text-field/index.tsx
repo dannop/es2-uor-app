@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 import './style.scss';
 
 interface Props {
@@ -8,7 +10,7 @@ interface Props {
   placeholder: string
 }
 
-export default function TextField(props: Props){
+function TextField(props: Props){
   const { label, name, value, onChange, placeholder } = props;
 
   return (
@@ -29,3 +31,5 @@ export default function TextField(props: Props){
     </div>
   )
 } 
+
+export default memo(TextField);
