@@ -34,7 +34,11 @@ export default function SignInPage(props: any){
   }
 
   return (
-    <div>
+    <div className="container">
+      <DefaultBtn 
+        label="Voltar"
+        onClick={() => props.history.push({pathname: '/'})}
+      />
       <TextField 
         label={'E-mail'}
         name={'E-mail'}
