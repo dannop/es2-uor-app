@@ -22,14 +22,14 @@ export default function SignUpPage(props: any){
         label={'E-mail'}
         name={'E-mail'}
         value={email}
-        onChange={setEmail}
+        onChange={(e: any) => setEmail(e.target.value)}
         placeholder={'Digite seu e-mail'}
       />
       <TextField 
         label={'Senha'}
         name={'Senha'}
         value={password}
-        onChange={setPassword}
+        onChange={(e: any) => setPassword(e.target.value)}
         placeholder={'Digite sua senha'}
       />
       <DefaultBtn 
