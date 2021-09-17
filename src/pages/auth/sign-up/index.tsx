@@ -1,15 +1,34 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+
+import { StorageService, ApiRoutesService } from '../../../services';
+
+import LoaderContext from '../../../context/loader';
 
 import TextField from '../../../components/forms/text-field';
-
 import DefaultBtn from '../../../components/buttons/default-btn';
 
+
 export default function SignUpPage(props: any){
+  const loaderContext = useContext(LoaderContext);
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   async function register() {
+    loaderContext?.setLoading(true);
+    const body = { email, password };
     
+    var resp = await ApiRoutesService.AuthApi.session.register(JSON.stringify(body));
+    if (resp != null) {
+      resp = await ApiRoutesService.AuthApi.session.login(JSON.stringify(body));
+      if (resp != null) {
+        StorageService.login(resp.token, resp.token);
+        props.history.push({pathname: '/home'});
+        return;
+      };
+    }
+    
+    loaderContext?.setLoading(false);
   }
 
   return (

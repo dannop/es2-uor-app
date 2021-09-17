@@ -86,10 +86,12 @@ export const postReq = async (label: string, url: string, body: string, check: b
         headers,
         body,
       }
+      console.log(reqParams)
       
       let url_completa = CONFIG.URL + url;
 
       let resp = await fetch(url_completa, reqParams);
+      console.log('resp', resp)
       
       return await getResp(label, resp);
     }catch(e){
