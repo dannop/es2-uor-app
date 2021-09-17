@@ -20,11 +20,11 @@ export default function SignInPage(props: any){
   async function login() {
     loaderContext?.setLoading(true);
     const body = { email, password };
-    // const resp = {
-    //   "type": "bearer",
-    //   "token": "NQ.US2ogNc8BIbmlPdMSx8JX8cmer6lCQMDK3Y3apR7GFBOsUHL0r28enNJygAy"
-    // }
-    const resp = await AuthApi.session.login(JSON.stringify(body));
+    const resp = {
+      "type": "bearer",
+      "token": "NQ.US2ogNc8BIbmlPdMSx8JX8cmer6lCQMDK3Y3apR7GFBOsUHL0r28enNJygAy"
+    }
+    // const resp = await AuthApi.session.login(JSON.stringify(body));
     if (resp != null) {
       StorageService.login(resp.token, resp.token);
       props.history.push({pathname: '/home'});

@@ -15,15 +15,31 @@ export default function HomePage(props: any){
 
   return (
     <div className="container">
-      <DefaultBtn 
-        label="Sair"
-        onClick={() => StorageService.logout(props.history)}
-      />
-      <h1>Home</h1>
-      <DefaultBtn 
-        label="Começar"
-        onClick={() => props.history.push({pathname: '/in-game'})}
-      />
+      
+      <section id="main-menu" className="d-flex">
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-md-10 offset-md-1 align-self-center">
+              <figure className="logo">
+                <img src={require("../../../assets/images/logo.png")} alt="Uór is fantastic"></img>
+              </figure>
+              <a href="/in-game">
+                <div className="rectangular-btn btn">Iniciar Jogo</div>
+              </a>
+            </div>
+            <div className="col-md-1">
+              <DefaultBtn 
+                label="Sair"
+                onClick={() => StorageService.logout(props.history)}
+              />
+              <div className="circle-btn d-flex rules"> 
+                <i className="fas fa-gavel align-self-center"></i> 
+              </div>
+              <div className="circle-btn group"></div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
