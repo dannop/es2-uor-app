@@ -3,6 +3,7 @@ import { useContext, useState, useEffect } from 'react';
 import LoaderContext from '../../../context/loader';
 
 import DefaultBtn from '../../../components/buttons/default-btn';
+import TransparentBtn from '../../../components/buttons/transparent-btn';
 import TextField from '../../../components/forms/text-field';
 import { StorageService } from '../../../services';
 
@@ -40,33 +41,35 @@ export default function SignInPage(props: any){
     <div className="default-section">
       <div className="container">
         <div className="login-container">
-          <div className="col-md-6">
-            <img src={logoImg} alt="Logo do Game" />
-            <TextField 
-              label={'E-mail'}
-              name={'E-mail'}
-              value={email}
-              onChange={(e: any) => setEmail(e.target.value)}
-              placeholder={'Digite seu e-mail'}
-            />
-            <TextField 
-              label={'Senha'}
-              name={'Senha'}
-              value={password}
-              onChange={(e: any) => setPassword(e.target.value)}
-              placeholder={'Digite sua senha'}
-            />
-            <div className="">
-              <DefaultBtn 
-                label="Entrar"
-                onClick={() => login()}
+          <div className="col-md-4">
+            <div className="form-container">
+              <img src={logoImg} alt="Logo do Game" />
+              <TextField 
+                label={'E-mail'}
+                name={'E-mail'}
+                value={email}
+                onChange={(e: any) => setEmail(e.target.value)}
+                placeholder={'Digite seu e-mail'}
               />
-              <DefaultBtn 
-                label="Cadastre-se"
-                onClick={() => props.history.push({pathname: '/sign-up'})}
+              <TextField 
+                label={'Senha'}
+                name={'Senha'}
+                value={password}
+                onChange={(e: any) => setPassword(e.target.value)}
+                placeholder={'Digite sua senha'}
               />
+              <div className="">
+                <DefaultBtn 
+                  label="Entrar"
+                  onClick={() => login()}
+                />
+                <TransparentBtn 
+                  label="Cadastre-se"
+                  onClick={() => props.history.push({pathname: '/sign-up'})}
+                />
+              </div>
             </div>
-          </div>
+            </div>
         </div>
       </div>
     </div>

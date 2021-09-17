@@ -1,10 +1,10 @@
 import { memo } from 'react';
 
+import './style.scss'
+
 function TransparentBtn({ label, onClick }: any){
   return (
-    <button onClick={onClick}>
-      <p>{label}</p>
-    </button>
+    <button className="transparentBtn" onClick={onClick}>{label}</button>
   )
 }
 
