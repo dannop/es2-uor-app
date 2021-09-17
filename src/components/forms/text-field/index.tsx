@@ -2,7 +2,7 @@ import { memo } from 'react';
 
 import './style.scss';
 
-interface Props {
+interface TextInputProps {
   label: string,
   name: string,
   value: string,
@@ -10,7 +10,7 @@ interface Props {
   placeholder: string
 }
 
-function TextField(props: Props){
+function TextField(props: TextInputProps){
   const { label, name, value, onChange, placeholder } = props;
 
   return (
