@@ -21,7 +21,7 @@ export default function HomePage(props: any){
             <figure className="logo">
               <img src={require("../../../assets/images/logo.png")} alt="Uór is fantastic"></img>
             </figure>
-            <a href="/in-game">
+            <a href="/players">
               <div className="rectangular-btn btn">Iniciar Jogo</div>
             </a>
           </div>
