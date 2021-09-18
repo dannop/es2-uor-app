@@ -13,6 +13,7 @@ import logoImg from '../../../assets/images/logo.png';
 export default function SignUpPage(props: any){
   const loaderContext = useContext(LoaderContext);
 
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -41,6 +42,13 @@ export default function SignUpPage(props: any){
             <div className="form-container">
               <img src={logoImg} alt="Logo do Game" />
               <TextField 
+                label={'Nome'}
+                name={'name'}
+                value={name}
+                onChange={(e: any) => setEmail(e.target.value)}
+                placeholder={'Digite seu nome'}
+              />
+              <TextField 
                 label={'E-mail'}
                 name={'E-mail'}
                 value={email}
@@ -59,7 +67,7 @@ export default function SignUpPage(props: any){
                 onClick={() => register()}
               />
               <TransparentBtn 
-                label="Login"
+                label="Voltar"
                 onClick={() => props.history.push({pathname: '/sign-in'})}
               />
             </div>
