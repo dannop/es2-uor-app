@@ -15,20 +15,18 @@ export default function InGamePage(props: any){
   }, [loaderContext]);
 
   return (
-    <section id="select-players" className="d-flex">
+    <section className="default-section ingame-section">
       <div className="container-fluid">
-        <div className="row players-row">
-          <div className="col-md-1">
-            <RoundBtn 
-              icon={<i className="fas fa-angle-double-left"></i>}
-              label="Voltar"
-              onClick={() => props.history.push({pathname: '/'})}
-            />
-          </div>
-          <GameMap 
-          
-          />		
+        <div className="action-container">
+          <RoundBtn 
+            icon={<i className="fas fa-angle-double-left"></i>}
+            label="Voltar"
+            onClick={() => props.history.push({pathname: '/'})}
+          />
         </div>
+        <GameMap 
+
+        />		
       </div>
     </section>
   );
