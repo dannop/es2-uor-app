@@ -36,7 +36,7 @@ function PlayerSelect({ color }: any){
 
   const disabled = (
     <div className="item d-flex justify-content-center align-items-center">
-      <button onClick={() => setKind(KINDS[2])}> 
+      <button onClick={() => setKind(KINDS[1])}> 
         <i className="fas fa-caret-left">
       </i> </button>
       <i className="fas fa-ban"></i>
