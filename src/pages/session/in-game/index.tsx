@@ -29,6 +29,8 @@ export default function InGamePage(props: any){
 
         />		
         <PlayerInfo
+          playerColor="#13BBD2"
+          teamTotal={7}
           playerName="Jogador Azul"
           currentRoundName="Fortificar Territórios"
         />
