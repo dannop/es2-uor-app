@@ -28,28 +28,26 @@ export default function HomePage(props: any){
         content={"Lorem ipsum"}
       />
       <div className="container-fluid">
-        <div className="row">
-          <div className="col-md-10 offset-md-1 align-self-center">
-            <figure className="logo">
-              <img src={logoImg} alt="Uór is fantastic"></img>
-            </figure>
-            <DefaultBtn 
-              label="Iniciar Jogo"
-              onClick={() => props.history.push({pathname: '/players'})}
-            />
-          </div>
-          <div className="col-md-1">
-            <RoundBtn 
-              icon={<i className="fas fa-angle-double-left"></i>}
-              label="Sair"
-              onClick={() => StorageService.logout(props.history)}
-            />
-            <RoundBtn 
-              icon={<i className="fas fa-gavel align-self-center"></i>}
-              label="Regras"
-              onClick={() => setRulesModal(true)}
-            />
-          </div>
+        <div className="action-container">
+          <RoundBtn 
+            icon={<i className="fas fa-angle-double-left"></i>}
+            label="Sair"
+            onClick={() => StorageService.logout(props.history)}
+          />
+          <RoundBtn 
+            icon={<i className="fas fa-gavel align-self-center"></i>}
+            label="Regras"
+            onClick={() => setRulesModal(true)}
+          />
+        </div>
+        <div className="centered-container">
+          <figure className="logo">
+            <img src={logoImg} alt="Uór is fantastic"></img>
+          </figure>
+          <DefaultBtn 
+            label="Iniciar Jogo"
+            onClick={() => props.history.push({pathname: '/players'})}
+          />
         </div>
       </div>
     </section>
