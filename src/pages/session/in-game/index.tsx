@@ -34,6 +34,20 @@ export default function InGamePage(props: any){
           playerName="Jogador Azul"
           currentRoundName="Fortificar Territórios"
         />
+        <div className="player-action-container left">
+          <RoundBtn 
+            icon={<i className="fas fa-angle-double-left"></i>}
+            label="Objetivo"
+            onClick={() => props.history.push({pathname: '/'})}
+          />
+        </div>
+        <div className="player-action-container right">
+          <RoundBtn 
+            icon={<i className="fas fa-angle-double-right"></i>}
+            label="Próximo Turno"
+            onClick={() => props.history.push({pathname: '/'})}
+          />
+        </div>
       </div>
     </section>
   );
