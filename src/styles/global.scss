@@ -27,7 +27,7 @@ html, body, #root{
 h1, h2, h3, h4, h5, h6{
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
-  font-size: 42px;;
+  font-size: 42px;
 }
 h1{
   font-size: 42px;
@@ -42,6 +42,22 @@ p{
   padding: 70px 0;
   flex: 1;
   height: 100%;
+}
+
+.centered-container {
+  display: flex;
+  flex: 1;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 120px;
+}
+
+.action-container {
+  position: absolute;
+  top: 50px;
+  left: 32px;
 }
 
 .circle-btn{

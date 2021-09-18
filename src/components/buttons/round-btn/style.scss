@@ -1,23 +1,28 @@
 @import '../../../styles/colors';
 
+.roundBtnContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 .roundBtn{
     background-color: $BRAND_COLOR_ORANGE;
-    border-radius: 10px;
-    text-transform: uppercase;
-    font-size: 14px;
-    text-align: center;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-weight: 700;
+    border-radius: 50%;
     color: $WHITE;
-    padding: 5px 20px;
-    border-bottom: 5px solid $BRAND_COLOR_ORANGE_DARKEST;
-    width: 100%;
-    margin-bottom: 16px;
+    box-shadow: 0 4px 0 0 $BRAND_COLOR_ORANGE_DARKEST;
+    margin-bottom: 12px;
+
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     transition: .3s;
 
     &:hover{
-        border-bottom: 0;
-        margin-top: 5px;
-      }
-  }
+        transform: translateY(5px);
+        box-shadow: 0 0 0 0 $BRAND_COLOR_ORANGE_DARKEST;
+    }
+}
