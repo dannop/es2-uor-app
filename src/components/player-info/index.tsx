@@ -23,7 +23,7 @@ export default function PlayerInfo(props: any) {
                     <p className="current-round">{currentRoundName}</p>
                 </div>
                 <div style={{borderColor: playerColor}} className="absolute-circle circle-left">
-                    
+                    <i className="fas fa-user"></i>
                 </div>
                 <div style={{borderColor: playerColor}} className="absolute-circle circle-right">
                     <h1>x{teamTotal}</h1>
