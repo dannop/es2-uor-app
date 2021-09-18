@@ -1,26 +1,7 @@
 import { toast } from 'react-toastify';
 
-const URL_PROD = 'http://127.0.0.1:3333/'; 
-const URL_TEST = 'http://127.0.0.1:3333/';
-
-const HOST_NAME = window.location.hostname;
-const parts = HOST_NAME.split('.');
-
-let last_index = -2;
-const last = parts[parts.length - 1];
-const is_localhost = last === 'localhost';
-if (is_localhost) last_index = -1;
-
-const subdomain = parts.slice(0, last_index).join('.');
-
-let URL_API = URL_PROD;
-
-if (subdomain) {
-  if (subdomain === 'test') URL_API = URL_TEST;
-}
-
 const CONFIG = {
-  URL: URL_API
+  URL: 'http://127.0.0.1:3333/'
 };
 
 const setHeaders = (check: boolean) => {

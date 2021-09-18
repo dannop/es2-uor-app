@@ -19,7 +19,7 @@ export default function SignUpPage(props: any){
 
   async function register() {
     loaderContext?.setLoading(true);
-    const body = { email, password };
+    const body = { name, email, password };
     
     var resp = await ApiRoutesService.AuthApi.session.register(JSON.stringify(body));
     if (resp != null) {
@@ -45,7 +45,7 @@ export default function SignUpPage(props: any){
                 label={'Nome'}
                 name={'name'}
                 value={name}
-                onChange={(e: any) => setEmail(e.target.value)}
+                onChange={(e: any) => setName(e.target.value)}
                 placeholder={'Digite seu nome'}
               />
               <TextField 
