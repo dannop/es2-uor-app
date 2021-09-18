@@ -6,6 +6,7 @@ import LoaderContext from "../../../context/loader";
 
 import RoundBtn from "../../../components/buttons/round-btn";
 import GameMap from "../../../components/game-map";
+import PlayerInfo from "../../../components/player-info";
 
 export default function InGamePage(props: any){
   const loaderContext = useContext(LoaderContext);
@@ -27,6 +28,10 @@ export default function InGamePage(props: any){
         <GameMap 
 
         />		
+        <PlayerInfo
+          playerName="Jogador Azul"
+          currentRoundName="Fortificar Territórios"
+        />
       </div>
     </section>
   );
